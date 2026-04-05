@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="theme-color" content="#0D1B2A" />
+  <title>ROKA🩵</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="icon-192.png" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐺</text></svg>" />
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'M PLUS Rounded 1c', sans-serif;
+      min-height: 100vh;
+      background: linear-gradient(160deg, #0D1B2A 0%, #1B2D45 40%, #162235 100%);
+      color: #E0E8F0;
+      padding: 0 16px 40px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .header {
+      text-align: center;
+      padding: 40px 0 28px;
+      position: relative;
+    }
+
+    .header::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #5BA4CF, transparent);
+    }
+
+    .header-icon {
+      font-size: 36px;
+      margin-bottom: 8px;
+      display: block;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
+    .header-title {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      background: linear-gradient(135deg, #7EC8E3, #B8D4E3);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .header-sub {
+      font-size: 10px;
+      color: #4A6A8A;
+      margin-top: 6px;
+      letter-spacing: 2px;
+    }
+
+    .section {
+      margin-bottom: 20px;
+    }
+
+    .section-label {
+      font-size: 10px;
+      font-weight: 700;
+      color: #4A6A8A;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      padding-left: 4px;
+    }
+
+    .link-card {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 16px;
+      margin-bottom: 8px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 14px;
+      text-decoration: none;
+      color: #D0DCE8;
+      transition: all 0.25s ease;
+      backdrop-filter: blur(4px);
+    }
+
+    .link-card:hover, .link-card:active {
+      background: rgba(91, 164, 207, 0.1);
+      border-color: rgba(91, 164, 207, 0.2);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 20px rgba(91, 164, 207, 0.08);
+    }
+
+    .link-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .link-text {
+      flex: 1;
+    }
+
+    .link-title {
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    .link-desc {
+      font-size: 10px;
+      color: #5A7A9A;
+      font-weight: 400;
+    }
+
+    .link-arrow {
+      color: #3A5A7A;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+
+    /* Icon backgrounds */
+    .icon-chappiyo { background: linear-gradient(135deg, #1A1A2E, #2D2D44); }
+    .icon-mico { background: linear-gradient(135deg, #2A3A4A, #1E3040); }
+    .icon-github { background: linear-gradient(135deg, #1A2030, #2A3545); }
+    .icon-tracker { background: linear-gradient(135deg, #1A3040, #0D2535); }
+    .icon-billing { background: linear-gradient(135deg, #2A2040, #1E1535); }
+    .icon-note { background: linear-gradient(135deg, #1A2A30, #0D2025); }
+    .icon-image { background: linear-gradient(135deg, #2A3040, #1E2535); }
+    .icon-merge { background: linear-gradient(135deg, #1A2530, #0D1A25); }
+    .icon-name { background: linear-gradient(135deg, #2A2A3A, #1E1E2E); }
+    .icon-sheets { background: linear-gradient(135deg, #1A3030, #0D2520); }
+
+    .footer {
+      text-align: center;
+      padding: 20px 0;
+      font-size: 10px;
+      color: #2A4060;
+      letter-spacing: 1px;
+    }
+
+    .footer-hearts {
+      font-size: 14px;
+      margin-bottom: 6px;
+      opacity: 0.6;
+    }
+
+    @media (min-width: 480px) {
+      body { max-width: 480px; margin: 0 auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <span class="header-icon">🐺</span>
+    <div class="header-title">ROKA</div>
+    <div class="header-sub">— tools & links —</div>
+  </div>
+
+  <!-- Main -->
+  <div class="section">
+    <div class="section-label">🖤 Main</div>
+
+    <a href="Claude://" class="link-card">
+      <div class="link-icon icon-chappiyo">🖤</div>
+      <div class="link-text">
+        <div class="link-title">ちゃっぴーに会いに行く</div>
+        <div class="link-desc">Claude</div>
+      </div>
+      <span class="link-arrow">›</span>
+    </a>
+
+    <a href="https://piyotaro777.github.io/micoapp/" class="link-card">
+      <div class="link-icon icon-mico">🐱</div>
+      <div class="link-text">
+        <div class="link-title">みこにゃんゲーム</div>
+        <div class="link-desc">育成ゲーム</div>
+      </div>
+      <span class="link-arrow">›</span>
+    </a>
+  </div>
+
+  <!-- Dev Tools -->
+  <div class="section">
+    <div class="section-label">🛠️ Dev Tools</div>
+
+    <a href="Github://" class="link-card">
+      <div class="link-icon icon-github">✒️</div>
+      <div class="link-text">
+        <div class="link-title">GitHub</div>
+        <div class="link-desc">リポジトリ管理</div>
+      </div>
+      <span class="link-arrow">›</span>
+    </a>
+
+    <a href="https://piyotaro777.github.io/claude-api-tracker/" class="link-card">
+      <div class="link-icon icon-tracker">🔋</div>
+      <div class="link-text">
+        <div class="link-title">API トラッカー</div>
+        <div class="link-desc">ちゃっぴよ コスト管理</div>
+      </div>
+      <span class="link-arrow">›</span>
+    </a>
+
+    <a href="https://platform.claude.com/settings/billing" class="link-card">
+      <div class="link-icon icon-billing">💰</div>
+      <div class="link-text">
+        <div class="link-title">Claude API Billing</div>
+        <div class="link-desc">Anthropic Console</div>
+      </div>
+      <span class="link-arrow">›</span>
+    </a>
+
+    <a href="googlesheets://" class="link-card">
+      <div class="link-icon icon-sheets">📊</div>
+      <div class="link-text">
+        <div class="link-title">ROKA LINE LOG</div>
+        <div class="link-desc">Google スプレッドシート</div>
+      </div>
+      <span class="link-arrow">›</span>
+    </a>
+
+    <a href="note://" class="link-card">
+      <div class="link-icon icon-note">💻</div>
+      <div class="link-text">
+        <div class="link-title">note+</div>
+        <div class="link-desc">メモ・ノート</div>
+      </div>
+      <span class="link-arrow">›</span>
+    </a>
+  </div>
+
+  <!-- Image Tools -->
+  <div class="section">
+    <div class="section-label">🎨 Image Tools</div>
+
+    <a href="https://chatimg.achapoko.fun/" class="link-card">
+      <div class="link-icon icon-image">📱</div>
+      <div class="link-text">
+        <div class="link-title">画像メーカー</div>
+        <div class="link-desc">チャット風画像生成</div>
+      </div>
+      <span class="link-arrow">›</span>
+    </a>
+
+    <a href="https://photocombine.net/cb/" class="link-card">
+      <div class="link-icon icon-merge">🖼️</div>
+      <div class="link-text">
+        <div class="link-title">画像マージツール</div>
+        <div class="link-desc">画像結合</div>
+      </div>
+      <span class="link-arrow">›</span>
+    </a>
+
+    <a href="https://caprice.sub.jp/name_conversion.html" class="link-card">
+      <div class="link-icon icon-name">🏷️</div>
+      <div class="link-text">
+        <div class="link-title">名前変換ツール</div>
+        <div class="link-desc">テキスト変換</div>
+      </div>
+      <span class="link-arrow">›</span>
+    </a>
+  </div>
+
+  <div class="footer">
+    <div class="footer-hearts">🖤🩵💙</div>
+    chappiyo links
+  </div>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js').catch(function() {});
+    }
+  </script>
+
+</body>
+</html>
